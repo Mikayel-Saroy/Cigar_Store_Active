@@ -1,0 +1,112 @@
+.main {
+
+}
+
+.main1 {
+    display: grid;
+    grid-template-areas: "a b c d e ";
+    color: #ffffff;
+    background-color: black;
+    height: 80px;
+}
+
+.logo {
+    grid-area: a;
+    margin-top: 12px;
+    margin-left: 40px;
+    cursor: pointer;
+    font-family: Zapfino, serif;
+    font-size: 17px;
+}
+
+.logo a {
+    color: rgb(186, 142, 82);
+}
+
+.logo a:hover {
+    color: rgb(166, 125, 55);
+}
+
+.cigars {
+    grid-area: b;
+    margin-top: 30px;
+    margin-left: 40px;
+    cursor: pointer;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.cigars a {
+    color: #ffffff;
+}
+
+.cigarillos {
+    grid-area: c;
+    margin-top: 30px;
+    cursor: pointer;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.cigarillos a {
+    color: #ffffff;
+}
+
+.accessories {
+    grid-area: d;
+    margin-top: 30px;
+    cursor: pointer;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.accessories a {
+    color: #ffffff;
+}
+
+.cart {
+    position: absolute;
+    padding-right: 100px;
+    margin-left: 1300px;
+    cursor: pointer;
+}
+
+.cartCount p {
+    color: #ffffff;
+}
+
+.cart img {
+    height: 30px;
+    margin-top: 25px;
+}
+
+.cartCount {
+    background-color: rgb(186, 142, 82);
+    position: absolute;
+    height: 30px;
+    border-radius: 30px;
+    margin-left: 43px;
+    margin-top: -32px;
+}
+
+.cartCount:hover {
+    background-color: rgb(166, 125, 55);
+}
+
+.cartCount p {
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.line {
+    height: 5px;
+    background-color: rgb(186, 142, 82);
+}
+
+.main a {
+    text-decoration: none;
+}
+
+.main a.active {
+    color: rgb(186, 142, 82);
+}

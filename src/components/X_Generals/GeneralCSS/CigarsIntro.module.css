@@ -1,0 +1,36 @@
+.main {
+    background-color: rgb(33, 33, 33);
+    margin-top: 10px;
+    margin-right: 20px;
+    border: 3px solid rgb(186, 142, 82);
+    border-radius: 30px;
+    padding-bottom: 30px;
+}
+
+.wallpaper {
+    width: 100%;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+}
+
+.introText {
+    color: whitesmoke;
+    font-size: 18px;
+    padding: 10px;
+}
+
+.secondText {
+    color: whitesmoke;
+    padding-left: 30px;
+    padding-top: 30px;
+    font-size: 20px;
+}
+
+.main a {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.main a:hover {
+    color: rgb(186, 142, 82);
+}

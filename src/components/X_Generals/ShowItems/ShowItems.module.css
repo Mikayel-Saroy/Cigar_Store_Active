@@ -1,0 +1,131 @@
+.main {
+    display: grid;
+    grid-template-areas: "l m r";
+    grid-template-columns: 3fr 6fr 3fr;
+}
+
+.main h5 {
+    font-size: 20px;
+}
+
+.left {
+    grid-area: l;
+}
+
+.mid {
+    grid-area: m;
+}
+
+.midPrice {
+    margin-top: -18px;
+    margin-left: 21px;
+    font-family: Times, serif;
+    font-size: 19px;
+}
+
+.midInfo {
+    margin-top: 40px;
+}
+
+.right {
+    grid-area: r;
+    margin-top: 35px;
+    margin-left: 50px;
+}
+
+.price {
+    background-color: rgb(186, 142, 82);
+    border-top: 1px solid rgb(166, 125, 55);
+    border-right: 1px solid rgb(166, 125, 55);
+    border-left: 1px solid rgb(166, 125, 55);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 35px;
+    width: 138px;
+}
+
+.price p {
+    font-size: 19px;
+    margin-top: 7px;
+    margin-left: 43px;
+}
+
+.select img {
+    height: 20px;
+}
+
+.select {
+    display: grid;
+    grid-template-areas: "m c p";
+    grid-template-columns: 40px 60px 40px;
+}
+
+.selectMinus {
+    background-color: rgb(186, 142, 82);
+    border: 1px solid rgb(166, 125, 55);
+    border-bottom-left-radius: 10px;
+    grid-area: m;
+    height: 35px;
+}
+
+.selectMinus img {
+    margin-left: 9px;
+    margin-top: 7px;
+}
+
+.selectMinus:hover {
+    background-color: rgb(166, 125, 55);
+}
+
+.selectCount {
+    background-color: rgb(186, 142, 82);
+    border-bottom: 1px solid rgb(166, 125, 55);
+    border-top: 1px solid rgb(166, 125, 55);
+    grid-area: c;
+    height: 35px;
+}
+
+.selectCount p {
+    margin-left: 25px;
+    margin-top: 8px;
+}
+
+.selectPlus {
+    background-color: rgb(186, 142, 82);
+    border: 1px solid rgb(166, 125, 55);
+    border-bottom-right-radius: 10px;
+    grid-area: p;
+    height: 35px;
+}
+
+.selectPlus img {
+    margin-left: 9px;
+    margin-top: 7px;
+}
+
+.selectPlus:hover {
+    background-color: rgb(166, 125, 55);
+}
+
+.addButton {
+    margin-top: 55px;
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 10px;
+    height: 30px;
+    width: 138px;
+    cursor: pointer;
+}
+
+.addButton p {
+    color: rgb(186, 142, 82);
+    margin-left: 23px;
+    margin-top: 4px;
+    font-family: Times, serif;
+    font-size: 18px;
+}
+
+.addButton:hover {
+    background-color: rgb(33, 33, 33);
+    border: 1px solid black;
+}

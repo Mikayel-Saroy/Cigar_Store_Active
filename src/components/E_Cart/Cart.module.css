@@ -1,0 +1,49 @@
+.main {
+    display: grid;
+    grid-template-columns: 75fr 25fr;
+}
+
+.list {
+
+}
+
+.checkout {
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-left: 70px;
+    background-color: rgb(26, 26, 26);
+    border: 3px solid rgb(186, 142, 82);
+    border-radius: 30px;
+    height: 200px;
+    width: 270px;
+}
+
+.checkoutInner {
+    margin-left: 35px;
+    margin-top: 30px;
+}
+
+.checkoutInfo p {
+    color: #ffffff;
+    font-family: Courier, serif;
+    font-size: 16px;
+}
+
+.checkoutButton {
+    background-color: rgb(186, 142, 82);
+    margin-top: 50px;
+    height: 35px;
+    width: 195px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.checkoutButton:hover {
+    background-color: rgb(166, 125, 55);
+}
+
+.checkoutButton p {
+    font-size: 18px;
+    margin-left: 12px;
+    padding-top: 6px;
+}

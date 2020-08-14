@@ -1,0 +1,38 @@
+.main {
+    display: grid;
+    grid-template-areas: "n l";
+    grid-template-columns: 3fr 10fr;
+    padding-bottom: 20px;
+}
+
+.nav {
+    margin-left: 20px;
+    margin-top: 20px;
+    grid-area: n;
+    background-color: rgb(26, 26, 26);
+    border: 3px solid rgb(186, 142, 82);
+    border-radius: 30px;
+    height: 340px;
+    width: 270px;
+}
+
+.navInner {
+    margin-left: 20px;
+    margin-top: 25px;
+}
+
+.nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 19px;
+    line-height: 35px;
+}
+
+.nav a.active {
+    color: rgb(186, 142, 82);
+}
+
+.list {
+    grid-area: l;
+    margin-left: 20px;
+}

@@ -1,0 +1,63 @@
+.main {
+    display: grid;
+    grid-template-areas: "l m r";
+    grid-template-columns: 3fr 6fr 3fr;
+}
+
+.main h5 {
+    font-size: 20px;
+}
+
+.left {
+    grid-area: l;
+}
+
+.mid {
+    grid-area: m;
+}
+
+.midPrice {
+    margin-top: -18px;
+    margin-left: 21px;
+    font-family: Times, serif;
+    font-size: 19px;
+}
+
+.midInfo {
+    margin-top: 40px;
+}
+
+.right {
+    grid-area: r;
+    padding-top: 10px;
+}
+
+.right p {
+    font-family: Courier, serif;
+    font-size: 16px;
+    margin-left: 130px;
+}
+
+.removeButton {
+    margin-top: 55px;
+    margin-left: 120px;
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 10px;
+    height: 30px;
+    width: 125px;
+    cursor: pointer;
+}
+
+.removeButton p {
+    color: rgb(186, 142, 82);
+    margin-left: 14px;
+    margin-top: 3px;
+    font-family: Times, serif;
+    font-size: 18px;
+}
+
+.removeButton:hover {
+    background-color: rgb(33, 33, 33);
+    border: 1px solid black;
+}
