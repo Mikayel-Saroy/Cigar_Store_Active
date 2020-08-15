@@ -1,5 +1,5 @@
 import React from 'react';
-import ShowItems from "../../X_Generals/ShowItems/ShowItems";
+import ShowItems from "../../X_Generals/ShowItems/ShowItems/ShowItems";
 
 
 const Montecristo = (props) => {
@@ -12,7 +12,9 @@ const Montecristo = (props) => {
                                                               price={item.price}
                                                               count={item.count}
                                                               location='c_1'
-                                                              dispatch={props.dispatch}
+                                                              plusButton={props.plusButton}
+                                                              minusButton={props.minusButton}
+                                                              addToCart={props.addToCart}
     />);
 
     return (

@@ -6,14 +6,13 @@ const CigarCutters = (props) => {
     const renderItems = (data) => data.map(item => <AccessoriesItem id={item.id}
                                                                     img={item.img}
                                                                     name={item.name}
-                                                                    amount={item.amount}
-                                                                    color={item.color}
-                                                                    size={item.size}
                                                                     price={item.price}
                                                                     count={item.count}
                                                                     location='a_1'
-                                                                    dispatch={props.dispatch}
-    />)
+                                                                    plusButton={props.plusButton}
+                                                                    minusButton={props.minusButton}
+                                                                    addToCart={props.addToCart}
+    />);
 
     return (
         <div>

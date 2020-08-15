@@ -1,5 +1,5 @@
 import React from 'react';
-import ShowItems from "../../X_Generals/ShowItems/ShowItems";
+import ShowItems from "../../X_Generals/ShowItems/ShowItems/ShowItems";
 
 
 const LaGloriaCubana = (props) => {
@@ -12,8 +12,10 @@ const LaGloriaCubana = (props) => {
                                                               price={item.price}
                                                               count={item.count}
                                                               location='c_4'
-                                                              dispatch={props.dispatch}
-    />)
+                                                              plusButton={props.plusButton}
+                                                              minusButton={props.minusButton}
+                                                              addToCart={props.addToCart}
+    />);
 
     return (
         <div>

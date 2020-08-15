@@ -47,28 +47,44 @@ const Cigars = (props) => {
                 <Route render={() => <CigarsIntro/>} exact path='/cigars'/>
                 <Route path='/cigars/montecristo'
                        render={() => <Montecristo montecristoData={props.cigarsData.montecristoData}
-                                                  dispatch={props.dispatch}/>}/>
+                                                  plusButton={props.plusButton}
+                                                  minusButton={props.minusButton}
+                                                  addToCart={props.addToCart}/>}/>
                 <Route path='/cigars/arturofuente'
                        render={() => <ArturoFuente arturoFuenteData={props.cigarsData.arturoFuenteData}
-                                                   dispatch={props.dispatch}/>}/>
+                                                   plusButton={props.plusButton}
+                                                   minusButton={props.minusButton}
+                                                   addToCart={props.addToCart}/>}/>
                 <Route path='/cigars/macanudo'
                        render={() => <Macanudo macanudoData={props.cigarsData.macanudoData}
-                                               dispatch={props.dispatch}/>}/>
+                                               plusButton={props.plusButton}
+                                               minusButton={props.minusButton}
+                                               addToCart={props.addToCart}/>}/>
                 <Route path='/cigars/lagloriacubana'
                        render={() => <LaGloriaCubana lagloriacubanaData={props.cigarsData.lagloriacubanaData}
-                                                     dispatch={props.dispatch}/>}/>
+                                                     plusButton={props.plusButton}
+                                                     minusButton={props.minusButton}
+                                                     addToCart={props.addToCart}/>}/>
                 <Route path='/cigars/elreydelmundo'
                        render={() => <ElReydelMundo elreydelmundoData={props.cigarsData.elreydelmundoData}
-                                                    dispatch={props.dispatch}/>}/>
+                                                    plusButton={props.plusButton}
+                                                    minusButton={props.minusButton}
+                                                    addToCart={props.addToCart}/>}/>
                 <Route path='/cigars/romeoyjulieta'
                        render={() => <RomeoYJulieta romeoyjulietaData={props.cigarsData.romeoyjulietaData}
-                                                    dispatch={props.dispatch}/>}/>
+                                                    plusButton={props.plusButton}
+                                                    minusButton={props.minusButton}
+                                                    addToCart={props.addToCart}/>}/>
                 <Route path='/cigars/hupmann'
                        render={() => <HUpmann hupmannData={props.cigarsData.hupmannData}
-                                              dispatch={props.dispatch}/>}/>
+                                              plusButton={props.plusButton}
+                                              minusButton={props.minusButton}
+                                              addToCart={props.addToCart}/>}/>
                 <Route path='/cigars/tatuaje'
                        render={() => <Tatuaje tatuajeData={props.cigarsData.tatuajeData}
-                                              dispatch={props.dispatch}/>}/>
+                                              plusButton={props.plusButton}
+                                              minusButton={props.minusButton}
+                                              addToCart={props.addToCart}/>}/>
             </div>
         </div>
     );

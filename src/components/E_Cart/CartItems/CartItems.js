@@ -1,11 +1,10 @@
 import React from 'react';
 import st from './CartItems.module.css';
-import {removeFromCartActionCreator} from "../../../redux/general-reducer";
+
 
 const CartItems = (props) => {
     const removeButton = () => {
-        let action = removeFromCartActionCreator(props.id);
-        props.dispatch(action);
+        props.removeFunction(props.id);
     };
 
     return (

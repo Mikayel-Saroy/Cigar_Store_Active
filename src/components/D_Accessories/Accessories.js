@@ -6,6 +6,7 @@ import CigarCutters from "./1_CigarCutters/CigarCutters";
 import CigarCases from "./2_CigarCases/CigarCases";
 import CigarLighters from "./3_CigarLighters/CigarLighters";
 import CigarAshtrays from "./4_CigarAshtrays/CigarAshtrays";
+import HUpmann from "../B_Cigars/7_HUpmann/HUpmann";
 
 const Accessories = (props) => {
     return (
@@ -30,16 +31,24 @@ const Accessories = (props) => {
                 <Route render={() => <AccessoriesIntro/>} exact path='/accessories'/>
                 <Route path='/accessories/cigarcutters'
                        render={() => <CigarCutters cigarCuttersData={props.accessoriesData.cigarCuttersData}
-                                                   dispatch={props.dispatch}/>}/>
+                                                   plusButton={props.plusButton}
+                                                   minusButton={props.minusButton}
+                                                   addToCart={props.addToCart}/>}/>
                 <Route path='/accessories/cigarcases'
                        render={() => <CigarCases cigarCasesData={props.accessoriesData.cigarCasesData}
-                                                 dispatch={props.dispatch}/>}/>
+                                                 plusButton={props.plusButton}
+                                                 minusButton={props.minusButton}
+                                                 addToCart={props.addToCart}/>}/>
                 <Route path='/accessories/cigarlighters'
                        render={() => <CigarLighters cigarLightersData={props.accessoriesData.cigarLightersData}
-                                                    dispatch={props.dispatch}/>}/>
+                                                    plusButton={props.plusButton}
+                                                    minusButton={props.minusButton}
+                                                    addToCart={props.addToCart}/>}/>
                 <Route path='/accessories/cigarashtrays'
                        render={() => <CigarAshtrays cigarAshtraysData={props.accessoriesData.cigarAshtraysData}
-                                                    dispatch={props.dispatch}/>}/>
+                                                    plusButton={props.plusButton}
+                                                    minusButton={props.minusButton}
+                                                    addToCart={props.addToCart}/>}/>
             </div>
         </div>
     );

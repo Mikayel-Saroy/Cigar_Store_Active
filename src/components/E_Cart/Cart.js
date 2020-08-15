@@ -9,13 +9,8 @@ const Cart = (props) => {
                                                                  price={item.price}
                                                                  count={item.count}
                                                                  totalPrice={item.count * item.price}
-                                                                 dispatch={props.dispatch}/>
+                                                                 removeFunction={props.removeFunction}/>
     );
-
-    const proceedToCheckout = () => {
-        let text = `Total Items: ${props.cartCheckoutData.totalItems}\nTotal Price: $${props.cartCheckoutData.totalPrice}`;
-        alert(text);
-    };
 
     return (
         <div className={st.main}>
@@ -29,7 +24,7 @@ const Cart = (props) => {
                         <p>Total Price: <b>${props.cartCheckoutData.totalPrice}</b></p>
                     </div>
                     <div className={st.checkoutButton}>
-                        <p onClick={() => proceedToCheckout()}>Proceed to Checkout</p>
+                        <p onClick={() => props.checkOutFunction()}>Proceed to Checkout</p>
                     </div>
                 </div>
             </div>

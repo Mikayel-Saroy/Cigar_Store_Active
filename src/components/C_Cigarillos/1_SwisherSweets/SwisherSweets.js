@@ -1,5 +1,6 @@
 import React from 'react';
-import ShowItems from "../../X_Generals/ShowItems/ShowItems";
+import ShowItems from "../../X_Generals/ShowItems/ShowItems/ShowItems";
+import Montecristo from "../../B_Cigars/1_Montecristo/Montecristo";
 
 
 const SwisherSweets = (props) => {
@@ -12,8 +13,10 @@ const SwisherSweets = (props) => {
                                                               price={item.price}
                                                               count={item.count}
                                                               location='cl_1'
-                                                              dispatch={props.dispatch}
-    />)
+                                                              plusButton={props.plusButton}
+                                                              minusButton={props.minusButton}
+                                                              addToCart={props.addToCart}
+    />);
 
     return (
         <div>

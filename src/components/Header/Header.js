@@ -22,7 +22,7 @@ function Header(props) {
                 <NavLink className={st.cart} to='/cart'>
                     <img src={shopping_cart} alt='img'/>
                     <div className={st.cartCount} style={{width: props.width}}>
-                        <p>{props.cartCheckoutData.totalItems}</p>
+                        <p>{props.totalItems}</p>
                     </div>
                 </NavLink>
             </div>

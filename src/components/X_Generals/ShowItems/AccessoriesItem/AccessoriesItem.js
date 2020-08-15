@@ -1,21 +1,18 @@
 import React from 'react';
-import st from './../ShowItems.module.css';
+import st from '../ShowItems/ShowItems.module.css';
 import minus_sign from './../minus_sign.png';
 import plus_sign from './../plus_sign.png';
-import {addToCartActionCreator, minusButtonActionCreator, plusButtonActionCreator} from "../../../../redux/general-reducer";
+
 
 const AccessoriesItem = (props) => {
     const plusFunction = () => {
-        let action = plusButtonActionCreator(props.location, props.id);
-        props.dispatch(action);
+        props.plusButton(props.location, props.id);
     };
     const minusFunction = () => {
-        let action = minusButtonActionCreator(props.location, props.id);
-        props.dispatch(action);
+        props.minusButton(props.location, props.id);
     };
     const addButton = () => {
-        let action = addToCartActionCreator(props.location, props.id);
-        props.dispatch(action);
+        props.addToCart(props.location, props.id);
     };
 
     return (

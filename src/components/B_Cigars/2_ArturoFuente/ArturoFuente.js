@@ -1,5 +1,5 @@
 import React from 'react';
-import ShowItems from "../../X_Generals/ShowItems/ShowItems";
+import ShowItems from "../../X_Generals/ShowItems/ShowItems/ShowItems";
 
 
 const ArturoFuente = (props) => {
@@ -12,8 +12,10 @@ const ArturoFuente = (props) => {
                                                               price={item.price}
                                                               count={item.count}
                                                               location='c_2'
-                                                              dispatch={props.dispatch}
-    />)
+                                                              plusButton={props.plusButton}
+                                                              minusButton={props.minusButton}
+                                                              addToCart={props.addToCart}
+    />);
 
     return (
         <div>
