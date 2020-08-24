@@ -273,7 +273,7 @@ let initialState = {
                 count: 1
             },
         ],
-            arturoFuenteData: [
+        arturoFuenteData: [
             {
                 id: 1,
                 img: c_af_1,
@@ -375,7 +375,7 @@ let initialState = {
                 count: 1,
             },
         ],
-            macanudoData: [
+        macanudoData: [
             {
                 id: 1,
                 img: c_mc_1,
@@ -477,7 +477,7 @@ let initialState = {
                 count: 1,
             },
         ],
-            lagloriacubanaData: [
+        lagloriacubanaData: [
             {
                 id: 1,
                 img: c_lg_1,
@@ -579,7 +579,7 @@ let initialState = {
                 count: 1,
             },
         ],
-            elreydelmundoData: [
+        elreydelmundoData: [
             {
                 id: 1,
                 img: c_er_1,
@@ -681,7 +681,7 @@ let initialState = {
                 count: 1,
             },
         ],
-            romeoyjulietaData: [
+        romeoyjulietaData: [
             {
                 id: 1,
                 img: c_rj_1,
@@ -783,7 +783,7 @@ let initialState = {
                 count: 1,
             },
         ],
-            hupmannData: [
+        hupmannData: [
             {
                 id: 1,
                 img: c_hu_1,
@@ -885,7 +885,7 @@ let initialState = {
                 count: 1,
             },
         ],
-            tatuajeData: [
+        tatuajeData: [
             {
                 id: 1,
                 img: c_tt_1,
@@ -1091,7 +1091,7 @@ let initialState = {
                 count: 1,
             },
         ],
-            djarumFilteredData: [
+        djarumFilteredData: [
             {
                 id: 1,
                 img: cl_dj_1,
@@ -1194,7 +1194,7 @@ let initialState = {
             },
 
         ],
-            whiteOwlData: [
+        whiteOwlData: [
             {
                 id: 1,
                 img: cl_wo_1,
@@ -1296,7 +1296,7 @@ let initialState = {
                 count: 1,
             },
         ],
-            cheyenneFilteredData: [
+        cheyenneFilteredData: [
             {
                 id: 1,
                 img: cl_cf_1,
@@ -1398,7 +1398,7 @@ let initialState = {
                 count: 1,
             },
         ],
-            villigerData: [
+        villigerData: [
             {
                 id: 1,
                 img: cl_vl_1,
@@ -1574,7 +1574,7 @@ let initialState = {
                 count: 1,
             },
         ],
-            cigarCasesData: [
+        cigarCasesData: [
             {
                 id: 1,
                 img: a_2_1,
@@ -1646,7 +1646,7 @@ let initialState = {
                 count: 1,
             },
         ],
-            cigarLightersData: [
+        cigarLightersData: [
             {
                 id: 1,
                 img: a_3_1,
@@ -1718,7 +1718,7 @@ let initialState = {
                 count: 1,
             },
         ],
-            cigarAshtraysData: [
+        cigarAshtraysData: [
             {
                 id: 1,
                 img: a_4_1,
@@ -1792,10 +1792,10 @@ let initialState = {
         ],
     },
     cartData: [],
-        cartCheckoutData: {
+    cartCheckoutData: {
         uniqueID: 0,
-            totalItems: 0,
-            totalPrice: 0,
+        totalItems: 0,
+        totalPrice: 0,
     },
     headerData: {
         countWidth: '30px',
@@ -1995,6 +1995,11 @@ const generalReducer = (state = initialState, action) => {
             reCountCartTotals();
             return state;
         }
+        case 'PROCEED-TO-CHECK-OUT': {
+            let text = `Total Items: ${state.cartCheckoutData.totalItems}\nTotal Price: $${state.cartCheckoutData.totalPrice}`;
+            alert(text);
+            return state;
+        }
         default: {
             return state;
         }
@@ -2021,4 +2026,7 @@ export const addToCartActionCreator = (location, id) => ({
 export const removeFromCartActionCreator = (id) => ({
     type: 'REMOVE-FROM-CART',
     id: id,
+});
+export const proceedToCheckout = () => ({
+    type: 'PROCEED-TO-CHECK-OUT',
 });

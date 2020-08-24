@@ -1,19 +1,20 @@
-import React from 'react';
 import Header from "./Header";
-import StoreContext from "../../StoreContext";
+import {connect} from "react-redux";
 
 
-function HeaderContainer() {
-    return <StoreContext.Consumer>
-        {
-            (store) => {
-                let state = store.getState();
+const mapStateToProps = (state) => {
+    return {
+        width: state.headerData.countWidth,
+        totalItems: state.cartCheckoutData.totalItems,
+    }
+};
 
-                return <Header width={state.headerData.countWidth}
-                               totalItems={state.cartCheckoutData.totalItems}/>
-            }
-        }
-    </StoreContext.Consumer>
-}
+const mapDispatchToProps = (dispatch) => {
+    return {
+
+    }
+};
+
+const HeaderContainer = connect(mapStateToProps, mapDispatchToProps)(Header);
 
 export default HeaderContainer;
