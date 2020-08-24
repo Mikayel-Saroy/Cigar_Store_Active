@@ -7,15 +7,15 @@ import HeaderContainer from "./components/Header/HeaderContainer";
 import ContentContainer from "./components/Content/ContentContainer";
 
 
-function App(props) {
+function App() {
     return (
         <BrowserRouter>
             <div className={st.main}>
-                <HeaderContainer store={props.store}/>
+                <HeaderContainer/>
                 <div className={st.content}>
                     <Route render={() => <CigarStore/>} exact path='/'/>
-                    <ContentContainer store={props.store}/>
-                    <Route render={() => <CartContainer store={props.store}/>} path='/cart'/>
+                    <ContentContainer/>
+                    <Route render={() => <CartContainer/>} path='/cart'/>
                 </div>
             </div>
         </BrowserRouter>
