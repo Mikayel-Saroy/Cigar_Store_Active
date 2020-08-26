@@ -6,7 +6,7 @@ import CigarCutters from "./1_CigarCutters/CigarCutters";
 import CigarCases from "./2_CigarCases/CigarCases";
 import CigarLighters from "./3_CigarLighters/CigarLighters";
 import CigarAshtrays from "./4_CigarAshtrays/CigarAshtrays";
-import HUpmann from "../Cigars/7_HUpmann/HUpmann";
+
 
 const Accessories = (props) => {
     return (

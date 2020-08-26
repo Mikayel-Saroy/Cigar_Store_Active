@@ -7,7 +7,6 @@ import DjarumFiltered from "./2_DjarumFiltered/DjarumFiltered";
 import WhiteOwl from "./3_WhiteOwl/WhiteOwl";
 import CheyenneFiltered from "./4_CheyenneFiltered/CheyenneFiltered";
 import Villiger from "./5_Villiger/Villiger";
-import Montecristo from "../Cigars/1_Montecristo/Montecristo";
 
 
 const Cigarillos = (props) => {

@@ -1,6 +1,5 @@
 import React from 'react';
 import ShowItems from "../../../X_Generals/ShowItems/ShowItems/ShowItems";
-import Montecristo from "../../Cigars/1_Montecristo/Montecristo";
 
 
 const SwisherSweets = (props) => {
