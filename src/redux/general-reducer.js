@@ -1803,171 +1803,463 @@ let initialState = {
 };
 
 const generalReducer = (state = initialState, action) => {
+    let stateCopy;
     const reCountCartTotals = () => {
         let totalItems = 0;
         let totalPrice = 0;
-        for (let key of state.cartData) {
+        for (let key of stateCopy.cartData) {
             totalItems += key.count;
             totalPrice += (key.price * key.count);
         }
         if (totalItems < 10) {
-            state.headerData.countWidth = "30px";
+            stateCopy.headerData.countWidth = "30px";
         } else if (totalItems < 100) {
-            state.headerData.countWidth = "37px";
+            stateCopy.headerData.countWidth = "37px";
         } else {
-            state.headerData.countWidth = "47px";
+            stateCopy.headerData.countWidth = "47px";
         }
-        state.cartCheckoutData.totalItems = totalItems;
-        state.cartCheckoutData.totalPrice = totalPrice;
+        stateCopy.cartCheckoutData.totalItems = totalItems;
+        stateCopy.cartCheckoutData.totalPrice = totalPrice;
     };
 
     switch (action.type) {
         case 'PLUS-BUTTON': {
             if (action.location === 'c_1') {
-                state.cigarsData.montecristoData[action.id - 1].count += 1;
+                stateCopy = {
+                    ...state,
+                    cigarsData: {...state.cigarsData},
+                    montecristoData: {...state.cigarsData.montecristoData},
+                };
+                stateCopy.cigarsData.montecristoData[action.id - 1].count += 1;
             } else if (action.location === 'c_2') {
-                state.cigarsData.arturoFuenteData[action.id - 1].count += 1;
+                stateCopy = {
+                    ...state,
+                    cigarsData: {...state.cigarsData},
+                    arturoFuenteData: {...state.cigarsData.arturoFuenteData},
+                };
+                stateCopy.cigarsData.arturoFuenteData[action.id - 1].count += 1;
             } else if (action.location === 'c_3') {
-                state.cigarsData.macanudoData[action.id - 1].count += 1;
+                stateCopy = {
+                    ...state,
+                    cigarsData: {...state.cigarsData},
+                    macanudoData: {...state.cigarsData.macanudoData},
+                };
+                stateCopy.cigarsData.macanudoData[action.id - 1].count += 1;
             } else if (action.location === 'c_4') {
-                state.cigarsData.lagloriacubanaData[action.id - 1].count += 1;
+                stateCopy = {
+                    ...state,
+                    cigarsData: {...state.cigarsData},
+                    lagloriacubanaData: {...state.cigarsData.lagloriacubanaData},
+                };
+                stateCopy.cigarsData.lagloriacubanaData[action.id - 1].count += 1;
             } else if (action.location === 'c_5') {
-                state.cigarsData.elreydelmundoData[action.id - 1].count += 1;
+                stateCopy = {
+                    ...state,
+                    cigarsData: {...state.cigarsData},
+                    elreydelmundoData: {...state.cigarsData.elreydelmundoData},
+                };
+                stateCopy.cigarsData.elreydelmundoData[action.id - 1].count += 1;
             } else if (action.location === 'c_6') {
-                state.cigarsData.romeoyjulietaData[action.id - 1].count += 1;
+                stateCopy = {
+                    ...state,
+                    cigarsData: {...state.cigarsData},
+                    romeoyjulietaData: {...state.cigarsData.romeoyjulietaData},
+                };
+                stateCopy.cigarsData.romeoyjulietaData[action.id - 1].count += 1;
             } else if (action.location === 'c_7') {
-                state.cigarsData.hupmannData[action.id - 1].count += 1;
+                stateCopy = {
+                    ...state,
+                    cigarsData: {...state.cigarsData},
+                    hupmannData: {...state.cigarsData.hupmannData},
+                };
+                stateCopy.cigarsData.hupmannData[action.id - 1].count += 1;
             } else if (action.location === 'c_8') {
-                state.cigarsData.tatuajeData[action.id - 1].count += 1;
+                stateCopy = {
+                    ...state,
+                    cigarsData: {...state.cigarsData},
+                    tatuajeData: {...state.cigarsData.tatuajeData},
+                };
+                stateCopy.cigarsData.tatuajeData[action.id - 1].count += 1;
             } else if (action.location === 'cl_1') {
-                state.cigarillosData.swisherSweetsData[action.id - 1].count += 1;
+                stateCopy = {
+                    ...state,
+                    cigarillosData: {...state.cigarillosData},
+                    swisherSweetsData: {...state.cigarillosData.swisherSweetsData},
+                };
+                stateCopy.cigarillosData.swisherSweetsData[action.id - 1].count += 1;
             } else if (action.location === 'cl_2') {
-                state.cigarillosData.djarumFilteredData[action.id - 1].count += 1;
+                stateCopy = {
+                    ...state,
+                    cigarillosData: {...state.cigarillosData},
+                    djarumFilteredData: {...state.cigarillosData.djarumFilteredData},
+                };
+                stateCopy.cigarillosData.djarumFilteredData[action.id - 1].count += 1;
             } else if (action.location === 'cl_3') {
-                state.cigarillosData.whiteOwlData[action.id - 1].count += 1;
+                stateCopy = {
+                    ...state,
+                    cigarillosData: {...state.cigarillosData},
+                    whiteOwlData: {...state.cigarillosData.whiteOwlData},
+                };
+                stateCopy.cigarillosData.whiteOwlData[action.id - 1].count += 1;
             } else if (action.location === 'cl_4') {
-                state.cigarillosData.cheyenneFilteredData[action.id - 1].count += 1;
+                stateCopy = {
+                    ...state,
+                    cigarillosData: {...state.cigarillosData},
+                    cheyenneFilteredData: {...state.cigarillosData.cheyenneFilteredData},
+                };
+                stateCopy.cigarillosData.cheyenneFilteredData[action.id - 1].count += 1;
             } else if (action.location === 'cl_5') {
-                state.cigarillosData.villigerData[action.id - 1].count += 1;
+                stateCopy = {
+                    ...state,
+                    cigarillosData: {...state.cigarillosData},
+                    villigerData: {...state.cigarillosData.villigerData},
+                };
+                stateCopy.cigarillosData.villigerData[action.id - 1].count += 1;
             } else if (action.location === 'a_1') {
-                state.accessoriesData.cigarCuttersData[action.id - 1].count += 1;
+                stateCopy = {
+                    ...state,
+                    accessoriesData: {...state.accessoriesData},
+                    cigarCuttersData: {...state.accessoriesData.cigarCuttersData},
+                };
+                stateCopy.accessoriesData.cigarCuttersData[action.id - 1].count += 1;
             } else if (action.location === 'a_2') {
-                state.accessoriesData.cigarCasesData[action.id - 1].count += 1;
+                stateCopy = {
+                    ...state,
+                    accessoriesData: {...state.accessoriesData},
+                    cigarCasesData: {...state.accessoriesData.cigarCasesData},
+                };
+                stateCopy.accessoriesData.cigarCasesData[action.id - 1].count += 1;
             } else if (action.location === 'a_3') {
-                state.accessoriesData.cigarLightersData[action.id - 1].count += 1;
+                stateCopy = {
+                    ...state,
+                    accessoriesData: {...state.accessoriesData},
+                    cigarLightersData: {...state.accessoriesData.cigarLightersData},
+                };
+                stateCopy.accessoriesData.cigarLightersData[action.id - 1].count += 1;
             } else if (action.location === 'a_4') {
-                state.accessoriesData.cigarAshtraysData[action.id - 1].count += 1;
+                stateCopy = {
+                    ...state,
+                    accessoriesData: {...state.accessoriesData},
+                    cigarAshtraysData: {...state.accessoriesData.cigarAshtraysData},
+                };
+                stateCopy.accessoriesData.cigarAshtraysData[action.id - 1].count += 1;
             }
-            return state;
+            return stateCopy;
         }
         case 'MINUS-BUTTON': {
             if (action.location === 'c_1') {
-                if (state.cigarsData.montecristoData[action.id - 1].count > 1) {
-                    state.cigarsData.montecristoData[action.id - 1].count -= 1;
+                stateCopy = {
+                    ...state,
+                    cigarsData: {...state.cigarsData},
+                    montecristoData: {...state.cigarsData.montecristoData},
+                };
+                if (stateCopy.cigarsData.montecristoData[action.id - 1].count > 1) {
+                    stateCopy.cigarsData.montecristoData[action.id - 1].count -= 1;
                 }
             } else if (action.location === 'c_2') {
-                if (state.cigarsData.arturoFuenteData[action.id - 1].count > 1) {
-                    state.cigarsData.arturoFuenteData[action.id - 1].count -= 1;
+                stateCopy = {
+                    ...state,
+                    cigarsData: {...state.cigarsData},
+                    arturoFuenteData: {...state.cigarsData.arturoFuenteData},
+                };
+                if (stateCopy.cigarsData.arturoFuenteData[action.id - 1].count > 1) {
+                    stateCopy.cigarsData.arturoFuenteData[action.id - 1].count -= 1;
                 }
             } else if (action.location === 'c_3') {
-                if (state.cigarsData.macanudoData[action.id - 1].count > 1) {
-                    state.cigarsData.macanudoData[action.id - 1].count -= 1;
+                stateCopy = {
+                    ...state,
+                    cigarsData: {...state.cigarsData},
+                    macanudoData: {...state.cigarsData.macanudoData},
+                };
+                if (stateCopy.cigarsData.macanudoData[action.id - 1].count > 1) {
+                    stateCopy.cigarsData.macanudoData[action.id - 1].count -= 1;
                 }
             } else if (action.location === 'c_4') {
-                if (state.cigarsData.lagloriacubanaData[action.id - 1].count > 1) {
-                    state.cigarsData.lagloriacubanaData[action.id - 1].count -= 1;
+                stateCopy = {
+                    ...state,
+                    cigarsData: {...state.cigarsData},
+                    lagloriacubanaData: {...state.cigarsData.lagloriacubanaData},
+                };
+                if (stateCopy.cigarsData.lagloriacubanaData[action.id - 1].count > 1) {
+                    stateCopy.cigarsData.lagloriacubanaData[action.id - 1].count -= 1;
                 }
             } else if (action.location === 'c_5') {
-                if (state.cigarsData.elreydelmundoData[action.id - 1].count > 1) {
-                    state.cigarsData.elreydelmundoData[action.id - 1].count -= 1;
+                stateCopy = {
+                    ...state,
+                    cigarsData: {...state.cigarsData},
+                    elreydelmundoData: {...state.cigarsData.elreydelmundoData},
+                };
+                if (stateCopy.cigarsData.elreydelmundoData[action.id - 1].count > 1) {
+                    stateCopy.cigarsData.elreydelmundoData[action.id - 1].count -= 1;
                 }
             } else if (action.location === 'c_6') {
-                if (state.cigarsData.romeoyjulietaData[action.id - 1].count > 1) {
-                    state.cigarsData.romeoyjulietaData[action.id - 1].count -= 1;
+                stateCopy = {
+                    ...state,
+                    cigarsData: {...state.cigarsData},
+                    romeoyjulietaData: {...state.cigarsData.romeoyjulietaData},
+                };
+                if (stateCopy.cigarsData.romeoyjulietaData[action.id - 1].count > 1) {
+                    stateCopy.cigarsData.romeoyjulietaData[action.id - 1].count -= 1;
                 }
             } else if (action.location === 'c_7') {
-                if (state.cigarsData.hupmannData[action.id - 1].count > 1) {
-                    state.cigarsData.hupmannData[action.id - 1].count -= 1;
+                stateCopy = {
+                    ...state,
+                    cigarsData: {...state.cigarsData},
+                    hupmannData: {...state.cigarsData.hupmannData},
+                };
+                if (stateCopy.cigarsData.hupmannData[action.id - 1].count > 1) {
+                    stateCopy.cigarsData.hupmannData[action.id - 1].count -= 1;
                 }
             } else if (action.location === 'c_8') {
-                if (state.cigarsData.tatuajeData[action.id - 1].count > 1) {
-                    state.cigarsData.tatuajeData[action.id - 1].count -= 1;
+                stateCopy = {
+                    ...state,
+                    cigarsData: {...state.cigarsData},
+                    tatuajeData: {...state.cigarsData.tatuajeData},
+                };
+                if (stateCopy.cigarsData.tatuajeData[action.id - 1].count > 1) {
+                    stateCopy.cigarsData.tatuajeData[action.id - 1].count -= 1;
                 }
             } else if (action.location === 'cl_1') {
-                if (state.cigarillosData.swisherSweetsData[action.id - 1].count > 1) {
-                    state.cigarillosData.swisherSweetsData[action.id - 1].count -= 1;
+                stateCopy = {
+                    ...state,
+                    cigarillosData: {...state.cigarillosData},
+                    swisherSweetsData: {...state.cigarillosData.swisherSweetsData},
+                };
+                if (stateCopy.cigarillosData.swisherSweetsData[action.id - 1].count > 1) {
+                    stateCopy.cigarillosData.swisherSweetsData[action.id - 1].count -= 1;
                 }
             } else if (action.location === 'cl_2') {
-                if (state.cigarillosData.djarumFilteredData[action.id - 1].count > 1) {
-                    state.cigarillosData.djarumFilteredData[action.id - 1].count -= 1;
+                stateCopy = {
+                    ...state,
+                    cigarillosData: {...state.cigarillosData},
+                    djarumFilteredData: {...state.cigarillosData.djarumFilteredData},
+                };
+                if (stateCopy.cigarillosData.djarumFilteredData[action.id - 1].count > 1) {
+                    stateCopy.cigarillosData.djarumFilteredData[action.id - 1].count -= 1;
                 }
             } else if (action.location === 'cl_3') {
-                if (state.cigarillosData.whiteOwlData[action.id - 1].count > 1) {
-                    state.cigarillosData.whiteOwlData[action.id - 1].count -= 1;
+                stateCopy = {
+                    ...state,
+                    cigarillosData: {...state.cigarillosData},
+                    whiteOwlData: {...state.cigarillosData.whiteOwlData},
+                };
+                if (stateCopy.cigarillosData.whiteOwlData[action.id - 1].count > 1) {
+                    stateCopy.cigarillosData.whiteOwlData[action.id - 1].count -= 1;
                 }
             } else if (action.location === 'cl_4') {
-                if (state.cigarillosData.cheyenneFilteredData[action.id - 1].count > 1) {
-                    state.cigarillosData.cheyenneFilteredData[action.id - 1].count -= 1;
+                stateCopy = {
+                    ...state,
+                    cigarillosData: {...state.cigarillosData},
+                    cheyenneFilteredData: {...state.cigarillosData.cheyenneFilteredData},
+                };
+                if (stateCopy.cigarillosData.cheyenneFilteredData[action.id - 1].count > 1) {
+                    stateCopy.cigarillosData.cheyenneFilteredData[action.id - 1].count -= 1;
                 }
             } else if (action.location === 'cl_5') {
-                if (state.cigarillosData.villigerData[action.id - 1].count > 1) {
-                    state.cigarillosData.villigerData[action.id - 1].count -= 1;
+                stateCopy = {
+                    ...state,
+                    cigarillosData: {...state.cigarillosData},
+                    villigerData: {...state.cigarillosData.villigerData},
+                };
+                if (stateCopy.cigarillosData.villigerData[action.id - 1].count > 1) {
+                    stateCopy.cigarillosData.villigerData[action.id - 1].count -= 1;
                 }
             } else if (action.location === 'a_1') {
-                if (state.accessoriesData.cigarCuttersData[action.id - 1].count > 1) {
-                    state.accessoriesData.cigarCuttersData[action.id - 1].count -= 1;
+                stateCopy = {
+                    ...state,
+                    accessoriesData: {...state.accessoriesData},
+                    cigarCuttersData: {...state.accessoriesData.cigarCuttersData},
+                };
+                if (stateCopy.accessoriesData.cigarCuttersData[action.id - 1].count > 1) {
+                    stateCopy.accessoriesData.cigarCuttersData[action.id - 1].count -= 1;
                 }
             } else if (action.location === 'a_2') {
-                if (state.accessoriesData.cigarCasesData[action.id - 1].count > 1) {
-                    state.accessoriesData.cigarCasesData[action.id - 1].count -= 1;
+                stateCopy = {
+                    ...state,
+                    accessoriesData: {...state.accessoriesData},
+                    cigarCasesData: {...state.accessoriesData.cigarCasesData},
+                };
+                if (stateCopy.accessoriesData.cigarCasesData[action.id - 1].count > 1) {
+                    stateCopy.accessoriesData.cigarCasesData[action.id - 1].count -= 1;
                 }
             } else if (action.location === 'a_3') {
-                if (state.accessoriesData.cigarLightersData[action.id - 1].count > 1) {
-                    state.accessoriesData.cigarLightersData[action.id - 1].count -= 1;
+                stateCopy = {
+                    ...state,
+                    accessoriesData: {...state.accessoriesData},
+                    cigarLightersData: {...state.accessoriesData.cigarLightersData},
+                };
+                if (stateCopy.accessoriesData.cigarLightersData[action.id - 1].count > 1) {
+                    stateCopy.accessoriesData.cigarLightersData[action.id - 1].count -= 1;
                 }
             } else if (action.location === 'a_4') {
-                if (state.accessoriesData.cigarAshtraysData[action.id - 1].count > 1) {
-                    state.accessoriesData.cigarAshtraysData[action.id - 1].count -= 1;
+                stateCopy = {
+                    ...state,
+                    accessoriesData: {...state.accessoriesData},
+                    cigarAshtraysData: {...state.accessoriesData.cigarAshtraysData},
+                };
+                if (stateCopy.accessoriesData.cigarAshtraysData[action.id - 1].count > 1) {
+                    stateCopy.accessoriesData.cigarAshtraysData[action.id - 1].count -= 1;
                 }
             }
-            return state;
+            return stateCopy;
         }
         case 'ADD-TO-CART': {
             let currentItem = {};
             if (action.location === 'c_1') {
-                currentItem = state.cigarsData.montecristoData[action.id - 1];
+                stateCopy = {
+                    ...state,
+                    cartCheckoutData: {...state.cartCheckoutData},
+                    cartData: [...state.cartData],
+                    cigarsData: {...state.cigarsData},
+                    montecristoData: {...state.cigarsData.montecristoData},
+                };
+                currentItem = stateCopy.cigarsData.montecristoData[action.id - 1];
             } else if (action.location === 'c_2') {
-                currentItem = state.cigarsData.arturoFuenteData[action.id - 1];
+                stateCopy = {
+                    ...state,
+                    cartCheckoutData: {...state.cartCheckoutData},
+                    cartData: [...state.cartData],
+                    cigarsData: {...state.cigarsData},
+                    arturoFuenteData: {...state.cigarsData.arturoFuenteData},
+                };
+                currentItem = stateCopy.cigarsData.arturoFuenteData[action.id - 1];
             } else if (action.location === 'c_3') {
-                currentItem = state.cigarsData.macanudoData[action.id - 1];
+                stateCopy = {
+                    ...state,
+                    cartCheckoutData: {...state.cartCheckoutData},
+                    cartData: [...state.cartData],
+                    cigarsData: {...state.cigarsData},
+                    macanudoData: {...state.cigarsData.macanudoData},
+                };
+                currentItem = stateCopy.cigarsData.macanudoData[action.id - 1];
             } else if (action.location === 'c_4') {
-                currentItem = state.cigarsData.lagloriacubanaData[action.id - 1];
+                stateCopy = {
+                    ...state,
+                    cartCheckoutData: {...state.cartCheckoutData},
+                    cartData: [...state.cartData],
+                    cigarsData: {...state.cigarsData},
+                    lagloriacubanaData: {...state.cigarsData.lagloriacubanaData},
+                };
+                currentItem = stateCopy.cigarsData.lagloriacubanaData[action.id - 1];
             } else if (action.location === 'c_5') {
-                currentItem = state.cigarsData.elreydelmundoData[action.id - 1];
+                stateCopy = {
+                    ...state,
+                    cartCheckoutData: {...state.cartCheckoutData},
+                    cartData: [...state.cartData],
+                    cigarsData: {...state.cigarsData},
+                    elreydelmundoData: {...state.cigarsData.elreydelmundoData},
+                };
+                currentItem = stateCopy.cigarsData.elreydelmundoData[action.id - 1];
             } else if (action.location === 'c_6') {
-                currentItem = state.cigarsData.romeoyjulietaData[action.id - 1];
+                stateCopy = {
+                    ...state,
+                    cartCheckoutData: {...state.cartCheckoutData},
+                    cartData: [...state.cartData],
+                    cigarsData: {...state.cigarsData},
+                    romeoyjulietaData: {...state.cigarsData.romeoyjulietaData},
+                };
+                currentItem = stateCopy.cigarsData.romeoyjulietaData[action.id - 1];
             } else if (action.location === 'c_7') {
-                currentItem = state.cigarsData.hupmannData[action.id - 1];
+                stateCopy = {
+                    ...state,
+                    cartCheckoutData: {...state.cartCheckoutData},
+                    cartData: [...state.cartData],
+                    cigarsData: {...state.cigarsData},
+                    hupmannData: {...state.cigarsData.hupmannData},
+                };
+                currentItem = stateCopy.cigarsData.hupmannData[action.id - 1];
             } else if (action.location === 'c_8') {
-                currentItem = state.cigarsData.tatuajeData[action.id - 1];
+                stateCopy = {
+                    ...state,
+                    cartCheckoutData: {...state.cartCheckoutData},
+                    cartData: [...state.cartData],
+                    cigarsData: {...state.cigarsData},
+                    tatuajeData: {...state.cigarsData.tatuajeData},
+                };
+                currentItem = stateCopy.cigarsData.tatuajeData[action.id - 1];
             } else if (action.location === 'cl_1') {
-                currentItem = state.cigarillosData.swisherSweetsData[action.id - 1];
+                stateCopy = {
+                    ...state,
+                    cartCheckoutData: {...state.cartCheckoutData},
+                    cartData: [...state.cartData],
+                    cigarillosData: {...state.cigarillosData},
+                    swisherSweetsData: {...state.cigarillosData.swisherSweetsData},
+                };
+                currentItem = stateCopy.cigarillosData.swisherSweetsData[action.id - 1];
             } else if (action.location === 'cl_2') {
-                currentItem = state.cigarillosData.djarumFilteredData[action.id - 1];
+                stateCopy = {
+                    ...state,
+                    cartCheckoutData: {...state.cartCheckoutData},
+                    cartData: [...state.cartData],
+                    cigarillosData: {...state.cigarillosData},
+                    djarumFilteredData: {...state.cigarillosData.djarumFilteredData},
+                };
+                currentItem = stateCopy.cigarillosData.djarumFilteredData[action.id - 1];
             } else if (action.location === 'cl_3') {
-                currentItem = state.cigarillosData.whiteOwlData[action.id - 1];
+                stateCopy = {
+                    ...state,
+                    cartCheckoutData: {...state.cartCheckoutData},
+                    cartData: [...state.cartData],
+                    cigarillosData: {...state.cigarillosData},
+                    whiteOwlData: {...state.cigarillosData.whiteOwlData},
+                };
+                currentItem = stateCopy.cigarillosData.whiteOwlData[action.id - 1];
             } else if (action.location === 'cl_4') {
-                currentItem = state.cigarillosData.cheyenneFilteredData[action.id - 1];
+                stateCopy = {
+                    ...state,
+                    cartCheckoutData: {...state.cartCheckoutData},
+                    cartData: [...state.cartData],
+                    cigarillosData: {...state.cigarillosData},
+                    cheyenneFilteredData: {...state.cigarillosData.cheyenneFilteredData},
+                };
+                currentItem = stateCopy.cigarillosData.cheyenneFilteredData[action.id - 1];
             } else if (action.location === 'cl_5') {
-                currentItem = state.cigarillosData.villigerData[action.id - 1];
+                stateCopy = {
+                    ...state,
+                    cartCheckoutData: {...state.cartCheckoutData},
+                    cartData: [...state.cartData],
+                    cigarillosData: {...state.cigarillosData},
+                    villigerData: {...state.cigarillosData.villigerData},
+                };
+                currentItem = stateCopy.cigarillosData.villigerData[action.id - 1];
             } else if (action.location === 'a_1') {
-                currentItem = state.accessoriesData.cigarCuttersData[action.id - 1];
+                stateCopy = {
+                    ...state,
+                    cartCheckoutData: {...state.cartCheckoutData},
+                    cartData: [...state.cartData],
+                    accessoriesData: {...state.accessoriesData},
+                    cigarCuttersData: {...state.accessoriesData.cigarCuttersData},
+                };
+                currentItem = stateCopy.accessoriesData.cigarCuttersData[action.id - 1];
             } else if (action.location === 'a_2') {
-                currentItem = state.accessoriesData.cigarCasesData[action.id - 1];
+                stateCopy = {
+
+                    ...state,
+                    cartCheckoutData: {...state.cartCheckoutData},
+                    cartData: [...state.cartData],
+                    accessoriesData: {...state.accessoriesData},
+                    cigarCasesData: {...state.accessoriesData.cigarCasesData},
+                };
+                currentItem = stateCopy.accessoriesData.cigarCasesData[action.id - 1];
             } else if (action.location === 'a_3') {
-                currentItem = state.accessoriesData.cigarLightersData[action.id - 1];
+                stateCopy = {
+
+                    ...state,
+                    cartCheckoutData: {...state.cartCheckoutData},
+                    cartData: [...state.cartData],
+                    accessoriesData: {...state.accessoriesData},
+                    cigarLightersData: {...state.accessoriesData.cigarLightersData},
+                };
+                currentItem = stateCopy.accessoriesData.cigarLightersData[action.id - 1];
             } else if (action.location === 'a_4') {
-                currentItem = state.accessoriesData.cigarAshtraysData[action.id - 1];
+                stateCopy = {
+                    ...state,
+                    cartCheckoutData: {...state.cartCheckoutData},
+                    cartData: [...state.cartData],
+                    accessoriesData: {...state.accessoriesData},
+                    cigarAshtraysData: {...state.accessoriesData.cigarAshtraysData},
+                };
+                currentItem = stateCopy.accessoriesData.cigarAshtraysData[action.id - 1];
             }
 
             let newItem = {
@@ -1977,11 +2269,11 @@ const generalReducer = (state = initialState, action) => {
                 price: currentItem.price,
                 count: currentItem.count,
             };
-            state.cartCheckoutData.uniqueID += 1;
-            state.cartData.unshift(newItem);
+            stateCopy.cartCheckoutData.uniqueID += 1;
+            stateCopy.cartData.unshift(newItem);
 
             reCountCartTotals();
-            return state;
+            return stateCopy;
         }
         case 'REMOVE-FROM-CART': {
             let newCartData = [];
@@ -1990,10 +2282,14 @@ const generalReducer = (state = initialState, action) => {
                     newCartData.push(state.cartData[i]);
                 }
             }
-            state.cartData = newCartData;
-
+            stateCopy = {
+                ...state,
+                cartData: newCartData,
+                headerData: {...state.headerData},
+                cartCheckoutData: {...state.cartCheckoutData},
+            };
             reCountCartTotals();
-            return state;
+            return stateCopy;
         }
         case 'PROCEED-TO-CHECK-OUT': {
             let text = `Total Items: ${state.cartCheckoutData.totalItems}\nTotal Price: $${state.cartCheckoutData.totalPrice}`;
@@ -2005,7 +2301,6 @@ const generalReducer = (state = initialState, action) => {
         }
     }
 };
-
 export default generalReducer;
 
 export const plusButtonActionCreator = (location, id) => ({
